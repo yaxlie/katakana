@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Google Play game services IDs.
+Save this file as res/values/games-ids.xml in your project.
+-->
+<resources>
+    <!-- app_id -->
+    <string name="app_id" translatable="false">713198200078</string>
+    <!-- package_name -->
+    <string name="package_name" translatable="false">com.mlmg.katakana</string>
+    <!-- achievement Level 1 -->
+    <string name="achievement_level_1" translatable="false">CgkIjsqz7-AUEAIQAQ</string>
+    <!-- achievement Level 2 -->
+    <string name="achievement_level_2" translatable="false">CgkIjsqz7-AUEAIQAg</string>
+    <!-- achievement Level 3 -->
+    <string name="achievement_level_3" translatable="false">CgkIjsqz7-AUEAIQAw</string>
+    <!-- achievement Level 4 -->
+    <string name="achievement_level_4" translatable="false">CgkIjsqz7-AUEAIQBA</string>
+    <!-- achievement Level 5 -->
+    <string name="achievement_level_5" translatable="false">CgkIjsqz7-AUEAIQBQ</string>
+    <!-- achievement Duelist -->
+    <string name="achievement_duelist" translatable="false">CgkIjsqz7-AUEAIQCw</string>
+    <!-- achievement Hand Writer -->
+    <string name="achievement_hand_writer" translatable="false">CgkIjsqz7-AUEAIQDA</string>
+    <!-- achievement Sensei -->
+    <string name="achievement_sensei" translatable="false">CgkIjsqz7-AUEAIQBg</string>
+    <!-- achievement Android trainer -->
+    <string name="achievement_android_trainer" translatable="false">CgkIjsqz7-AUEAIQDQ</string>
+    <!-- achievement Novelist -->
+    <string name="achievement_novelist" translatable="false">CgkIjsqz7-AUEAIQDg</string>
+    <!-- achievement Points Master -->
+    <string name="achievement_points_master" translatable="false">CgkIjsqz7-AUEAIQBw</string>
+    <!-- achievement Points... whut? -->
+    <string name="achievement_points..._whut" translatable="false">CgkIjsqz7-AUEAIQCA</string>
+    <!-- achievement Patient -->
+    <string name="achievement_patient" translatable="false">CgkIjsqz7-AUEAIQDw</string>
+    <!-- leaderboard Points -->
+    <string name="leaderboard_points" translatable="false">CgkIjsqz7-AUEAIQCQ</string>
+    <!-- leaderboard Time Challenge -->
+    <string name="leaderboard_time_challenge" translatable="false">CgkIjsqz7-AUEAIQCg</string>
+    <!-- leaderboard Writers -->
+    <string name="leaderboard_writers" translatable="false">CgkIjsqz7-AUEAIQEA</string>
+</resources>

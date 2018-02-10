@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainView"
+    android:background="@drawable/bg"
+    tools:context="com.mlmg.katakana.PlayPaintProblematicActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:alpha="0.5"
+        ads:srcCompat="@drawable/points"
+        android:layout_alignBottom="@+id/pointsTextView"
+        android:layout_toLeftOf="@+id/pointsTextView"
+        android:layout_toStartOf="@+id/pointsTextView" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:text="MA"
+        android:textColor="@android:color/white"
+        android:textSize="80sp" />
+
+    <TextView
+        android:id="@+id/attemptTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="1/10"
+        android:textSize="20sp"
+        android:layout_alignTop="@+id/titleTextView" />
+
+    <TextView
+        android:id="@+id/pointsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="100"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="20sp"
+        android:layout_alignTop="@+id/titleTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/buttonEnd"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/titleTextView"
+        android:layout_centerHorizontal="true"
+        android:background="@color/buttonColor"
+        android:drawableBottom="@android:drawable/ic_media_play" />
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:background="@color/buttonCorrect"
+        android:drawableBottom="@android:drawable/ic_media_next"
+        android:layout_above="@id/layad"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="5dp" />
+
+    <Button
+        android:id="@+id/buttonRefresh"
+        android:layout_width="35dp"
+        android:layout_marginBottom="3dp"
+        android:layout_height="35dp"
+        android:background="@color/buttonColor"
+        android:drawableBottom="@android:drawable/ic_menu_rotate"
+        android:layout_above="@+id/layad"
+        android:layout_centerHorizontal="true" />
+
+    <view
+        android:id="@+id/drawingView"
+        class="com.mlmg.katakana.DrawingView"
+        id="@+id/view"
+        layout_below="@+id/buttonEnd"
+        layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonRefresh"
+        android:layout_below="@+id/buttonEnd"
+        android:layout_margin="15dp"
+        android:background="@color/colorPrimaryDark" />
+
+    <LinearLayout
+        android:id="@+id/layad"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"></LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/debug2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:layout_above="@id/drawingView"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/titleTextView"
+        android:layout_toLeftOf="@id/buttonEnd" />
+
+</android.widget.RelativeLayout>
