@@ -277,7 +277,6 @@ public class PlayPaintActivity extends AppCompatActivity {
         buttonEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 dialog.setMessage("0%");
                 dialog.show();
 
@@ -286,7 +285,7 @@ public class PlayPaintActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     public void run() {
                         bitmap[0] = cutBitmap(bitmap[0]);
-                        if(!skipProcessing)
+                        if (!skipProcessing)
                             processImage(bitmap[0]);
                         dialog.dismiss();
 
@@ -297,17 +296,16 @@ public class PlayPaintActivity extends AppCompatActivity {
                                 refreshText();
                                 buttonNext.setVisibility(View.VISIBLE);
                                 buttonNext.startAnimation(anim);
-                                if(!done){
-                                    points += maxToGet*(percentageScore/100);
-                                    dbPlayer.upStatsDrawValue(letter.getLetter_l(),percentageScore);
-                                    updateAchievements((int)(maxToGet*(percentageScore/100)),percentageScore);
+                                if (!done) {
+                                    points += maxToGet * (percentageScore / 100);
+                                    dbPlayer.upStatsDrawValue(letter.getLetter_l(), percentageScore);
+                                    updateAchievements((int) (maxToGet * (percentageScore / 100)), percentageScore);
                                     done = true;
                                 }
                             }
                         });
                     }
                 }).start();
-
             }
         });
     }
@@ -316,13 +314,16 @@ public class PlayPaintActivity extends AppCompatActivity {
         try {
             dbPlayer.addPoints(points);
             if (apiHelper.isSignedIn() && percentageScore > 0) {
-                apiHelper.progressAchi(getString(R.string.achievement_points_master), points);
-                apiHelper.progressAchi(getString(R.string.achievement_points____whut), points);
-                apiHelper.updateLeaderboard(getString(R.string.leaderboard_points), dbPlayer.getScore());
+                if(points>0) {
+                    apiHelper.progressAchi(getString(R.string.achievement_points_master), points);
+                    apiHelper.progressAchi(getString(R.string.achievement_points____whut), points);
+                    apiHelper.updateLeaderboard(getString(R.string.leaderboard_points), dbPlayer.getScore());
+                }
 
-                apiHelper.updateLeaderboard(getString(R.string.leaderboard_writers), (long) (dbPlayer.getDrawScoreAll()*100));
+                float all = dbPlayer.getDrawScoreAll();
+                apiHelper.updateLeaderboard(getString(R.string.leaderboard_writers), (long) (all*100));
 
-                if(dbPlayer.getDrawScoreAll()>=60){
+                if(all>=60){
                     apiHelper.unlockAchi(getString(R.string.achievement_patient));
                 }
                 if (percentageScore > 80) {

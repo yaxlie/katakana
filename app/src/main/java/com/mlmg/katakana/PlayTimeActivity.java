@@ -91,6 +91,18 @@ public class PlayTimeActivity extends PlayActivity {
     }
 
     @Override
+    protected void losujMain(){
+        int letterUid = letter!=null? letter.getUid(): -1;
+        boolean losuj = true;
+
+        while(losuj) {
+            letter = dbHiragana.getRandomAll();
+            losuj = (letter.getUid() == letterUid);
+        }
+        titleText.setText(letter.getLetter_h());
+    }
+
+    @Override
     public void onBackPressed() {
         try {
             timer.cancel();

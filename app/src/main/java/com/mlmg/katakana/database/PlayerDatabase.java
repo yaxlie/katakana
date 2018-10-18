@@ -114,15 +114,13 @@ public class PlayerDatabase extends SQLiteOpenHelper {
 
     public float getDrawScoreAll(){
         SQLiteDatabase db = this.getWritableDatabase();
-        int i=0;
         float sum = 0;
-        Cursor res = db.rawQuery("SELECT draw_value FROM stats;", null);
+        Cursor res = db.rawQuery("SELECT sum(draw_value)/count(*) FROM stats;", null);
         while(res.moveToNext()){
-            i++;
             sum+=res.getFloat(0);
         }
         res.close();
-        return sum/i;
+        return sum;
     }
 
     public void incStatsCorrectAns(String name){
